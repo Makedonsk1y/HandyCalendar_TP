@@ -182,6 +182,13 @@ ba{
 <script>
   function buttClick1(){
     alert(document.getElementById('InputStroke').value);
+    var mDate = new Date();
+    mDate = document.getElementById('date').value;
+    alert(mDate.getMonth());
+    var div1 = document.getElementById('calendarTable');
+    var stl = div1[0].style;
+    div1.className = "close";
+    document.getElementById('calendarTable');
   }
 </script>
 
