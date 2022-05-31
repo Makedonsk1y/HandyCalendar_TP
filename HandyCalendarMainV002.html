@@ -5,6 +5,7 @@
   max-width: 700;
   margin: 0 auto;
   border-spacing: 0 1.5em;
+border-radius: 50px;
 background-color: #4811C0
 }
 #calendarBig td {
@@ -55,20 +56,135 @@ color: #FFFFFF;
   color: black;
 }
 #calendarBig table tbody td[title] { /* выделенные даты */ 
-  outline: 3px solid green;
+  outline: 2px solid green;
   background: green;
   cursor: help;
 }
 #calendarBig table tbody td[title] a { /* выделенные даты-ссылки */ 
   display: block;
   text-decoration: none;
-  color: #FFFFFF;
+  background: #ffb02e;
+  color: black;
 }
 #calendarBig table tbody td[title] a:hover { /* выделенные даты-ссылки под курсором */
   background: #fde910;
   color: black;
 }
+
+h1{
+   font-size:40px;
+   color:#ab274f;
+font-family:verdana;
+text-align:center
+
+}
+body {
+    background-color:#FFC8A8;
+	
+}
+
+ button{
+        position: absolute;
+        width: 200px;
+        height: 100px;
+        top: 500px;
+        left: 200px;
+	border-radius: 50px;
+	background-color: #CEFFA8
+    }
+
+
+#zatemnenie {
+        background: rgba(102, 102, 102, 0.5);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: none;
+      }
+#okno {
+        width: 600px;
+        height: 100px;
+        text-align: center;
+        padding: 15px;
+        border: 3px solid #0000cc;
+        border-radius: 10px;
+        color: #0000cc;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        background: #fff;
+   }
+#zatemnenie:target {display: block;}
+      .close {
+        display: inline-block;
+        border: 1px solid #0000cc;
+        color: #0000cc;
+	background: #f2f2f2;
+        padding: 0 12px;
+        margin: 10px;
+        text-decoration: none;
+        font-size: 14pt;
+        cursor:pointer;
+      }
+      .close:hover {background: #e6e6ff;}
+ba{
+  	 color:#009900;
+	
+       
+}
 </style>
+
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<title> HandyCalendar</title>
+</head>
+
+<body background="fon.jpg">
+
+<h1 id = "Hige">HandyCalendar</h1>
+ 
+<div id="zatemnenie">
+      <div id="okno">
+        Новое событие<br>
+<input  id = "InputStroke" type="text" size="40" placeholder="Введите событие сюда." >
+<input id="date" type="date" value="">
+<button onclick="buttClick1()">Создать событие</button>
+<a href="#" class="close"><ba>Создать событие</ba></a>
+<a href="#" class="close">Отмена</a>
+      </div>
+    </div>
+ 
+    <hr>
+<script>
+  function buttClick1(){
+    alert(document.getElementById('InputStroke').value);
+  }
+</script>
+
+    <a href="#zatemnenie"> <button>
+    <alt="Кликните, чтобы создать событие" style="vertical-align:middle"> 
+    Создать событие
+   </button></a>
+
+<form action="Autorization.html">
+<button style="position: absolute;
+        width: 180px;
+        height: 50px;
+        top: 100px;
+        left: 200px;
+	border-radius: 50px;
+	background-color: pink">
+    <alt="" style="vertical-align:middle"> 
+    Выйти
+   </button>
+</form>
 
 <table id="calendarBig">
  <thead>
@@ -163,6 +279,8 @@ color: #FFFFFF;
         <tbody>
       </table>
 </table>
+</html>
+
 
 <div id="calendarTable">
   <div data-dd="4" data-mm="7" data-text="День рождения у Пучкова Ильи"></div>
@@ -171,6 +289,7 @@ color: #FFFFFF;
   <div data-dd="28" data-mm="7" data-yyyy="2022" data-text="Концерт Газманова в Киеве" data-link="https://memepedia.ru/koncert-gazmanova/"></div>
 <div data-dd="9" data-mm="1" data-yyyy="2002" data-text="Концерт Группы КиШ в Томске"></div>
 </div>
+</body>
 
 <script>
 function calendarBig(year) {
